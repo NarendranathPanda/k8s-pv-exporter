@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>NDAC PMO Setup</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<link href="../static/css/ndacmonitoring.css" th:href="@{/css/ndacmonitoring.css}"
+	rel="stylesheet" />
+<body>
+
+	<h1>NDAC Environment list</h1>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Value</th>
+			<th>Link</th>
+		</tr>
+		<tr th:each="env : ${envs}">
+			<td th:text="${env.name}"></td>
+			<td th:text="${env.value}"></td>
+			<td><a th:if="${env.url}" th:href="${env.url}">Click here</a></td>
+		</tr>
+	</table>
+
+
+
+</body>
+
+</html>
